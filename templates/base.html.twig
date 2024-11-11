@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{# Lien vers le fichier CSS local de Bootstrap #}
+		{# <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}"> #}
+		<link rel="stylesheet" href="{{ asset('assets/css/flatly.min.css') }}">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+
+		<body>
+			{{include('injections/navbar.html.twig')}}
+
+			<div class="container-xl"> 
+			{% block body %}{% endblock %}
+			</div>
+
+
+			</body>
+			{# Lien vers le fichier JS local de Bootstrap (inclut aussi Popper.js) #}
+			<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+		</html>
